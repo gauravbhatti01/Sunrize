@@ -10,7 +10,7 @@ export function Hero() {
       <div className="relative">
 
         {/* Hero Image Container */}
-        <div className="relative rounded-[2rem] overflow-hidden h-[400px] md:h-[480px] lg:h-[520px] shadow-2xl flex items-center">
+        <div className="relative rounded-[2rem] overflow-hidden min-h-[400px] md:min-h-[480px] lg:min-h-[520px] shadow-2xl flex items-center py-10">
           <Image
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=80"
             alt="Modern residential exterior"
@@ -29,22 +29,22 @@ export function Hero() {
           </div>
 
           {/* Main Text Content */}
-          <div className="relative z-10 w-full max-w-3xl px-8 sm:px-16 text-white mb-16">
+          <div className="relative z-10 w-full max-w-3xl px-6 sm:px-16 text-white mb-16">
             <div className="animate-rise inline-flex items-center gap-2 mb-6 rounded-full border border-white/10 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-bold uppercase tracking-wider">
               <span className="w-2 h-2 rounded-full bg-green-400"></span>
               Authorized DSA • Real Human Experts
             </div>
-            <h1 className="animate-rise-delay-1 font-display text-5xl sm:text-6xl md:text-[5rem] font-bold leading-[1.05] tracking-tight">
+            <h1 className="animate-rise-delay-1 font-display text-4xl sm:text-5xl md:text-[5rem] font-bold leading-[1.05] tracking-tight">
               Discover Loans<br />That Feel Like Home.
             </h1>
-            <p className="animate-rise-delay-2 mt-6 text-lg sm:text-xl text-white/80 max-w-xl font-medium leading-relaxed">
+            <p className="animate-rise-delay-2 mt-4 sm:mt-6 text-base sm:text-xl text-white/80 max-w-xl font-medium leading-relaxed">
               Compare handpicked home loan offers from 40+ top banks with honest, transparent advice.
             </p>
           </div>
         </div>
 
         {/* Floating Action Bar */}
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[92%] sm:w-[85%] max-w-5xl bg-white rounded-[2rem] p-4 sm:p-6 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.15)] flex flex-col sm:flex-row items-end gap-4 animate-rise-delay-3">
+        <div className="relative mx-auto mt-[-4rem] lg:mt-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-0 lg:translate-y-1/2 w-[92%] lg:w-[90%] xl:w-[85%] max-w-5xl bg-white rounded-[2rem] p-5 sm:p-6 shadow-[0_20px_60px_-15px_rgba(15,23,42,0.15)] flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row lg:items-end gap-4 lg:gap-4 animate-rise-delay-3 z-20">
 
           <div className="flex-1 w-full">
             <label className="text-xs font-bold text-ink-soft mb-1.5 block">Mobile no</label>
@@ -82,7 +82,7 @@ export function Hero() {
             />
           </div>
 
-          <div className="w-full sm:w-auto flex-shrink-0">
+          <div className="w-full sm:w-auto flex-shrink-0 md:col-span-2 lg:col-span-1 flex items-end justify-end">
             <Button href="/apply" className="w-full sm:w-auto h-12 !rounded-xl !px-8 !bg-sunrise hover:!bg-sunrise-deep text-white font-bold text-sm shadow-md">
               Submit Details
             </Button>

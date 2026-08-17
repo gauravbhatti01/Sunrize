@@ -52,11 +52,11 @@ export function WhyChoose() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4 md:divide-x md:divide-white/10">
           {TRUST_FACTORS.map((item, index) => (
             <div
               key={item.title}
-              className={`flex flex-col items-center text-center px-4 ${index > 0 ? "pt-8 md:pt-0" : ""}`}
+              className="flex flex-col items-center text-center px-4"
             >
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/5 text-sunrise transition-transform duration-300 hover:scale-110 hover:bg-sunrise/10">
                 {item.icon}

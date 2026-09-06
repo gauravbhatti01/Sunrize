@@ -7,6 +7,7 @@ export async function POST(request: Request) {
     const phone = String(body.phone ?? "").trim();
     const city = String(body.city ?? "").trim();
     const loanType = String(body.loanType ?? "").trim();
+    const loanAmount = String(body.loanAmount ?? body.amount ?? "").trim();
 
     if (!name || !phone || !city || !loanType) {
       return NextResponse.json(
@@ -29,6 +30,7 @@ export async function POST(request: Request) {
           phone,
           city,
           loanType,
+          loanAmount,
         }),
       });
 

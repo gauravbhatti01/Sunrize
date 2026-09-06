@@ -86,8 +86,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
-      <body className={`${outfit.variable} ${dmSans.variable} ${spaceGrotesk.variable} antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <body
+        className={`${outfit.variable} ${dmSans.variable} ${spaceGrotesk.variable} antialiased`}
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

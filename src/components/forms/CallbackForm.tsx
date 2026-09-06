@@ -18,6 +18,23 @@ export function CallbackForm({
 }: CallbackFormProps) {
   const [status, setStatus] = useState<Status>("idle");
   const [submitting, setSubmitting] = useState(false);
+  const [loanAmount, setLoanAmount] = useState("");
+
+  function handleAmountChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const raw = e.target.value.replace(/\D/g, "");
+    if (!raw) {
+      setLoanAmount("");
+      return;
+    }
+    if (raw.length <= 3) {
+      setLoanAmount(raw);
+    } else {
+      const lastThree = raw.substring(raw.length - 3);
+      const otherDigits = raw.substring(0, raw.length - 3);
+      const formattedOther = otherDigits.replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+      setLoanAmount(`${formattedOther},${lastThree}`);
+    }
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -36,6 +53,7 @@ export function CallbackForm({
 
       if (!response.ok) throw new Error("Failed");
       setStatus("success");
+      setLoanAmount("");
       form.reset();
     } catch {
       setStatus("error");
@@ -111,6 +129,20 @@ export function CallbackForm({
             name="loanType"
             defaultValue={defaultLoanType || "Home Loan"}
             options={LOAN_TYPE_OPTIONS as unknown as string[]}
+          />
+        </label>
+
+        <label className="block space-y-1.5">
+          <span className="text-xs font-bold uppercase tracking-wider text-ink-soft">
+            Loan Amount (₹)
+          </span>
+          <input
+            name="loanAmount"
+            required
+            value={loanAmount}
+            onChange={handleAmountChange}
+            className={fieldClass}
+            placeholder="e.g. 25,00,000"
           />
         </label>
       </div>
